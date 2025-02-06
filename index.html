@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz San Valentín</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #ff3034, #e23b97);
+            background-image: url('https://marketplace.canva.com/EAFoe6hiEk4/2/0/1600w/canva-fondo-de-pantalla-floral-org%C3%A1nico-rosa-vc3qudeYiCM.jpg');
+            color: white;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            padding: 5px 20px 20px;
+            max-width: 90%;
+            width: 450px;
+            margin: auto;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            animation: bounce 2s infinite alternate;
+            color: #e23b97;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 15px;
+        }
+        img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 20px;
+            margin: 20px 0;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transform: scale(0.8);
+            animation: zoomIn 1s forwards;
+            background: rgba(255, 255, 255, 0.8);
+        }
+        .message {
+            font-size: 1.2em;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            color: #e23b97;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            transform: translateY(30px);
+            opacity: 0;
+            animation: slideUp 1s forwards 1s;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            font-size: 1.2em;
+            background-color: #e23b97;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: 0.3s;
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .button:hover {
+            background-color: #ff3b3f;
+            transform: scale(1.1);
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        @keyframes bounce {
+            to { transform: translateY(-10px); }
+        }
+        @keyframes zoomIn {
+            to { transform: scale(1); }
+        }
+        @keyframes slideUp {
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @media (max-width: 768px) {
+            body {
+                height: auto;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            .message {
+                font-size: 1em;
+            }
+            .button {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            .message {
+                font-size: 0.9em;
+            }
+            .button {
+                font-size: 0.9em;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+    <script>
+        function showLoveMessage() {
+            const messages = [
+                "¡Te amo con todo mi corazón! ❤️",
+                "Eres mi rayito de sol, mi lugar seguro, mi motivación 💕",
+                "¡Siempre estás en mi corazón y mente! 💓",
+                "Eres mi persona favorita 💖",
+                "Me gustas, me encantas, me fascinas ❤️"
+
+            ];
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            Swal.fire(randomMessage);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Feliz Cumple Mes Mi Amor! 💖</h1>
+        <img src="assets/love.jpg" alt="San Valentín">
+        <p class="message">Cada día contigo es un regalo, y cada instante me confirma que estar a tu lado es lo mejor que me ha pasado. Gracias por tu amor, tu paciencia y por hacer de mi mundo un lugar más bonito. ¡Feliz mesario, mi amor! 💖
+        </p>
+        <button class="button" onclick="showLoveMessage()">Pulsa Aquí 💌</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
