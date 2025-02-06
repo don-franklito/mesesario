@@ -134,7 +134,12 @@
 
             ];
             const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-            Swal.fire(randomMessage);
+            Swal.fire({
+                title: "Mensaje sopresa",
+                text: randomMessage,
+                confirmButtonText: "💌",
+                confirmButtonColor: "#e23b97",
+            });
         }
     </script>
 </head>
